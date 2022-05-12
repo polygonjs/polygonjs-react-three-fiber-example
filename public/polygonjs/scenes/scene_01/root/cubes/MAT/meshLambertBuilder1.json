@@ -1,0 +1,818 @@
+{
+	"type": "meshLambertBuilder",
+	"nodes": {
+		"attribute1": {
+			"type": "attribute",
+			"params": {
+				"name": "baseColor",
+				"type": 2
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"globals1": {
+			"type": "globals"
+		},
+		"output1": {
+			"type": "output",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "mix2",
+					"output": "mix"
+				},
+				{
+					"index": 1,
+					"node": "mix3",
+					"output": "mix"
+				},
+				{
+					"index": 2,
+					"node": "attribute1",
+					"output": "val"
+				}
+			]
+		},
+		"mix2": {
+			"type": "mix",
+			"params": {
+				"value0": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"value1": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"blend": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true,
+						"editable": false
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "position"
+				},
+				{
+					"index": 1,
+					"node": "multAdd3",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "easing1",
+					"output": "out"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "vec3"
+					},
+					{
+						"name": "value1",
+						"type": "vec3"
+					},
+					{
+						"name": "blend",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "mix",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"mix3": {
+			"type": "mix",
+			"params": {
+				"value0": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"value1": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"blend": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "normal"
+				},
+				{
+					"index": 1,
+					"node": "normalize2",
+					"output": "normalized"
+				},
+				{
+					"index": 2,
+					"node": "easing1",
+					"output": "out"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "vec3"
+					},
+					{
+						"name": "value1",
+						"type": "vec3"
+					},
+					{
+						"name": "blend",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "mix",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"param2": {
+			"type": "param",
+			"params": {
+				"name": "blendShape"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute2": {
+			"type": "attribute",
+			"params": {
+				"name": "pti"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"subtract2": {
+			"type": "subtract",
+			"params": {
+				"sub0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"sub1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"sub2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "param2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "complement1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "sub0",
+						"type": "float"
+					},
+					{
+						"name": "sub1",
+						"type": "float"
+					},
+					{
+						"name": "sub2",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "subtract",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"clamp2": {
+			"type": "clamp",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"min": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				},
+				"max": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "subtract2",
+					"output": "subtract"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "min",
+						"type": "float"
+					},
+					{
+						"name": "max",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"complement1": {
+			"type": "complement",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"easing1": {
+			"type": "easing",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "clamp2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "out",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"normalize2": {
+			"type": "normalize",
+			"params": {
+				"in": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "multAdd4",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "normalized",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"multAdd3": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"preAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				},
+				"mult": {
+					"type": "vector3",
+					"default_value": [
+						1,
+						1,
+						1
+					],
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": [
+						0.5,
+						0.5,
+						0.5
+					]
+				},
+				"postAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": [
+						0,
+						0.5,
+						0
+					]
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "normalize2",
+					"output": "normalized"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "preAdd",
+						"type": "vec3"
+					},
+					{
+						"name": "mult",
+						"type": "vec3"
+					},
+					{
+						"name": "postAdd",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"multAdd4": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"preAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": [
+						0,
+						-0.5,
+						0
+					]
+				},
+				"mult": {
+					"type": "vector3",
+					"default_value": [
+						1,
+						1,
+						1
+					],
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				},
+				"postAdd": {
+					"type": "vector3",
+					"default_value": [
+						0,
+						0,
+						0
+					],
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "position"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "preAdd",
+						"type": "vec3"
+					},
+					{
+						"name": "mult",
+						"type": "vec3"
+					},
+					{
+						"name": "postAdd",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		}
+	},
+	"params": {
+		"blendShape": {
+			"type": "float",
+			"default_value": 0,
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			},
+			"raw_input": 1,
+			"overriden_options": {
+				"callback": "{}"
+			}
+		}
+	},
+	"persisted_config": {
+		"material": {
+			"metadata": {
+				"version": 4.5,
+				"type": "Material",
+				"generator": "Material.toJSON"
+			},
+			"uuid": "/cubes/MAT/meshLambertBuilder1-main",
+			"type": "MeshLambertMaterial",
+			"name": "/cubes/MAT/meshLambertBuilder1",
+			"color": 16777215,
+			"emissive": 0,
+			"reflectivity": 1,
+			"refractionRatio": 0.98,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"colorWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680
+		},
+		"onBeforeCompileDataJSON": {
+			"vertexShader": "#define LAMBERT\nvarying vec3 vLightFront;\nvarying vec3 vIndirectFront;\n#ifdef DOUBLE_SIDED\n\tvarying vec3 vLightBack;\n\tvarying vec3 vIndirectBack;\n#endif\n#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/complement1\nfloat complement(float x){return 1.0-x;}\nvec2 complement(vec2 x){return vec2(1.0-x.x, 1.0-x.y);}\nvec3 complement(vec3 x){return vec3(1.0-x.x, 1.0-x.y, 1.0-x.z);}\nvec4 complement(vec4 x){return vec4(1.0-x.x, 1.0-x.y, 1.0-x.z, 1.0-x.w);}\n\n\n// /cubes/MAT/meshLambertBuilder1/easing1\n\nfloat sineInOut(float t) {\n  return -0.5 * (cos(PI * t) - 1.0);\n}\n\n\n\n\n\n\n\n\n\n// /cubes/MAT/meshLambertBuilder1/param2\nuniform float v_POLY_param_blendShape;\n\n// /cubes/MAT/meshLambertBuilder1/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_normal;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n// /cubes/MAT/meshLambertBuilder1/attribute2\nattribute float pti;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nattribute vec3 baseColor;\n\n\n\n\n#include <uv_pars_vertex>\n#include <uv2_pars_vertex>\n#include <envmap_pars_vertex>\n#include <bsdfs>\n#include <lights_pars_begin>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <shadowmap_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\nvoid main() {\n\t#include <uv_vertex>\n\t#include <uv2_vertex>\n\t#include <color_vertex>\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_normal = vec3(normal);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/param2\n\tfloat v_POLY_param2_val = v_POLY_param_blendShape;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute2\n\tfloat v_POLY_attribute2_val = pti;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tv_POLY_attribute_baseColor = vec3(baseColor);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd4\n\tvec3 v_POLY_multAdd4_val = (vec3(1.0, 1.0, 1.0)*(v_POLY_globals1_position + vec3(0.0, -0.5, 0.0))) + vec3(0.0, 0.0, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/complement1\n\tfloat v_POLY_complement1_val = complement(v_POLY_attribute2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/normalize2\n\tvec3 v_POLY_normalize2_normalized = normalize(v_POLY_multAdd4_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/subtract2\n\tfloat v_POLY_subtract2_subtract = (v_POLY_param2_val - v_POLY_complement1_val - 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd3\n\tvec3 v_POLY_multAdd3_val = (vec3(0.5, 0.5, 0.5)*(v_POLY_normalize2_normalized + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.5, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/clamp2\n\tfloat v_POLY_clamp2_val = clamp(v_POLY_subtract2_subtract, 0.0, 1.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/easing1\n\tfloat v_POLY_easing1_out = sineInOut(v_POLY_clamp2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix2\n\tvec3 v_POLY_mix2_mix = mix(v_POLY_globals1_position, v_POLY_multAdd3_val, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix3\n\tvec3 v_POLY_mix3_mix = mix(v_POLY_globals1_normal, v_POLY_normalize2_normalized, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tvec3 transformed = v_POLY_mix2_mix;\n\tvec3 objectNormal = v_POLY_mix3_mix;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphcolor_vertex>\n// removed:\n//\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinbase_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n// removed:\n//\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\t#include <worldpos_vertex>\n\t#include <envmap_vertex>\n\t#include <lights_lambert_vertex>\n\t#include <shadowmap_vertex>\n\t#include <fog_vertex>\n}",
+			"fragmentShader": "uniform vec3 diffuse;\nuniform vec3 emissive;\nuniform float opacity;\nvarying vec3 vLightFront;\nvarying vec3 vIndirectFront;\n#ifdef DOUBLE_SIDED\n\tvarying vec3 vLightBack;\n\tvarying vec3 vIndirectBack;\n#endif\n#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n\n\n\n#include <packing>\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <uv2_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <emissivemap_pars_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_pars_fragment>\n#include <cube_uv_reflection_fragment>\n#include <bsdfs>\n#include <lights_pars_begin>\n#include <fog_pars_fragment>\n#include <shadowmap_pars_fragment>\n#include <shadowmask_pars_fragment>\n#include <specularmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\nvoid main() {\n\t#include <clipping_planes_fragment>\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tvec3 v_POLY_attribute1_val = v_POLY_attribute_baseColor;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_attribute1_val;\n\n\n\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\tvec3 totalEmissiveRadiance = emissive;\n\t#include <logdepthbuf_fragment>\n\t#include <map_fragment>\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <specularmap_fragment>\n\t#include <emissivemap_fragment>\n\t#ifdef DOUBLE_SIDED\n\t\treflectedLight.indirectDiffuse += ( gl_FrontFacing ) ? vIndirectFront : vIndirectBack;\n\t#else\n\t\treflectedLight.indirectDiffuse += vIndirectFront;\n\t#endif\n\t#include <lightmap_fragment>\n\treflectedLight.indirectDiffuse *= BRDF_Lambert( diffuseColor.rgb );\n\t#ifdef DOUBLE_SIDED\n\t\treflectedLight.directDiffuse = ( gl_FrontFacing ) ? vLightFront : vLightBack;\n\t#else\n\t\treflectedLight.directDiffuse = vLightFront;\n\t#endif\n\treflectedLight.directDiffuse *= BRDF_Lambert( diffuseColor.rgb ) * getShadowMask();\n\t#include <aomap_fragment>\n\tvec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + totalEmissiveRadiance;\n\t#include <envmap_fragment>\n\t#include <output_fragment>\n\t#include <tonemapping_fragment>\n\t#include <encodings_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n}",
+			"timeDependent": false,
+			"resolutionDependent": false,
+			"paramConfigs": [
+				{
+					"type": "float",
+					"name": "blendShape",
+					"defaultValue": 0,
+					"uniformName": "v_POLY_param_blendShape"
+				}
+			]
+		},
+		"customMaterials": {
+			"customDepthMaterial": {
+				"material": {
+					"metadata": {
+						"version": 4.5,
+						"type": "Material",
+						"generator": "Material.toJSON"
+					},
+					"uuid": "/cubes/MAT/meshLambertBuilder1-customDepthMaterial",
+					"type": "MeshDepthMaterial",
+					"name": "customDepthMaterial",
+					"depthFunc": 3,
+					"depthTest": true,
+					"depthWrite": true,
+					"colorWrite": true,
+					"stencilWrite": false,
+					"stencilWriteMask": 255,
+					"stencilFunc": 519,
+					"stencilRef": 0,
+					"stencilFuncMask": 255,
+					"stencilFail": 7680,
+					"stencilZFail": 7680,
+					"stencilZPass": 7680,
+					"depthPacking": 3201
+				},
+				"onBeforeCompileDataJSON": {
+					"vertexShader": "#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/complement1\nfloat complement(float x){return 1.0-x;}\nvec2 complement(vec2 x){return vec2(1.0-x.x, 1.0-x.y);}\nvec3 complement(vec3 x){return vec3(1.0-x.x, 1.0-x.y, 1.0-x.z);}\nvec4 complement(vec4 x){return vec4(1.0-x.x, 1.0-x.y, 1.0-x.z, 1.0-x.w);}\n\n\n// /cubes/MAT/meshLambertBuilder1/easing1\n\nfloat sineInOut(float t) {\n  return -0.5 * (cos(PI * t) - 1.0);\n}\n\n\n\n\n\n\n\n\n\n// /cubes/MAT/meshLambertBuilder1/param2\nuniform float v_POLY_param_blendShape;\n\n// /cubes/MAT/meshLambertBuilder1/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_normal;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n// /cubes/MAT/meshLambertBuilder1/attribute2\nattribute float pti;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nattribute vec3 baseColor;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\nvarying vec2 vHighPrecisionZW;\nvoid main() {\n\t#include <uv_vertex>\n\t#include <skinbase_vertex>\n\t#ifdef USE_DISPLACEMENTMAP\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\t#endif\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_normal = vec3(normal);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/param2\n\tfloat v_POLY_param2_val = v_POLY_param_blendShape;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute2\n\tfloat v_POLY_attribute2_val = pti;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tv_POLY_attribute_baseColor = vec3(baseColor);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd4\n\tvec3 v_POLY_multAdd4_val = (vec3(1.0, 1.0, 1.0)*(v_POLY_globals1_position + vec3(0.0, -0.5, 0.0))) + vec3(0.0, 0.0, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/complement1\n\tfloat v_POLY_complement1_val = complement(v_POLY_attribute2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/normalize2\n\tvec3 v_POLY_normalize2_normalized = normalize(v_POLY_multAdd4_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/subtract2\n\tfloat v_POLY_subtract2_subtract = (v_POLY_param2_val - v_POLY_complement1_val - 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd3\n\tvec3 v_POLY_multAdd3_val = (vec3(0.5, 0.5, 0.5)*(v_POLY_normalize2_normalized + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.5, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/clamp2\n\tfloat v_POLY_clamp2_val = clamp(v_POLY_subtract2_subtract, 0.0, 1.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/easing1\n\tfloat v_POLY_easing1_out = sineInOut(v_POLY_clamp2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix2\n\tvec3 v_POLY_mix2_mix = mix(v_POLY_globals1_position, v_POLY_multAdd3_val, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix3\n\tvec3 v_POLY_mix3_mix = mix(v_POLY_globals1_normal, v_POLY_normalize2_normalized, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tvec3 transformed = v_POLY_mix2_mix;\n\tvec3 objectNormal = v_POLY_mix3_mix;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\tvHighPrecisionZW = gl_Position.zw;\n}",
+					"fragmentShader": "\n// INSERT DEFINES\n\n\n#if DEPTH_PACKING == 3200\n\n\tuniform float opacity;\n\n#endif\n\n#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tdiffuseColor.a = opacity;\n\n\t#endif\n\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tvec3 v_POLY_attribute1_val = v_POLY_attribute_baseColor;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_attribute1_val;\n\n\n\n\n\t// INSERT BODY\n\t// the new body lines should be added before the alphatest_fragment\n\t// so that alpha is set before (which is really how it would be set if the alphamap_fragment above was used by the material node parameters)\n\n\t#include <alphatest_fragment>\n\n\t#include <logdepthbuf_fragment>\n\n\n\t// Higher precision equivalent of gl_FragCoord.z. This assumes depthRange has been left to its default values.\n\tfloat fragCoordZ = 0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5;\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tgl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), diffuseColor.a );\n\n\t#elif DEPTH_PACKING == 3201\n\n\t\tgl_FragColor = packDepthToRGBA( fragCoordZ );\n\n\t#endif\n\n}\n",
+					"timeDependent": false,
+					"resolutionDependent": false,
+					"paramConfigs": [
+						{
+							"type": "float",
+							"name": "blendShape",
+							"defaultValue": 0,
+							"uniformName": "v_POLY_param_blendShape"
+						}
+					]
+				}
+			},
+			"customDistanceMaterial": {
+				"material": {
+					"metadata": {
+						"version": 4.5,
+						"type": "Material",
+						"generator": "Material.toJSON"
+					},
+					"uuid": "/cubes/MAT/meshLambertBuilder1-customDistanceMaterial",
+					"type": "MeshDistanceMaterial",
+					"name": "customDistanceMaterial",
+					"depthFunc": 3,
+					"depthTest": true,
+					"depthWrite": true,
+					"colorWrite": true,
+					"stencilWrite": false,
+					"stencilWriteMask": 255,
+					"stencilFunc": 519,
+					"stencilRef": 0,
+					"stencilFuncMask": 255,
+					"stencilFail": 7680,
+					"stencilZFail": 7680,
+					"stencilZPass": 7680
+				},
+				"onBeforeCompileDataJSON": {
+					"vertexShader": "#define DISTANCE\nvarying vec3 vWorldPosition;\n#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/complement1\nfloat complement(float x){return 1.0-x;}\nvec2 complement(vec2 x){return vec2(1.0-x.x, 1.0-x.y);}\nvec3 complement(vec3 x){return vec3(1.0-x.x, 1.0-x.y, 1.0-x.z);}\nvec4 complement(vec4 x){return vec4(1.0-x.x, 1.0-x.y, 1.0-x.z, 1.0-x.w);}\n\n\n// /cubes/MAT/meshLambertBuilder1/easing1\n\nfloat sineInOut(float t) {\n  return -0.5 * (cos(PI * t) - 1.0);\n}\n\n\n\n\n\n\n\n\n\n// /cubes/MAT/meshLambertBuilder1/param2\nuniform float v_POLY_param_blendShape;\n\n// /cubes/MAT/meshLambertBuilder1/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_normal;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n// /cubes/MAT/meshLambertBuilder1/attribute2\nattribute float pti;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nattribute vec3 baseColor;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <clipping_planes_pars_vertex>\nvoid main() {\n\t#include <uv_vertex>\n\t#include <skinbase_vertex>\n\t#ifdef USE_DISPLACEMENTMAP\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\t#endif\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_normal = vec3(normal);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/param2\n\tfloat v_POLY_param2_val = v_POLY_param_blendShape;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute2\n\tfloat v_POLY_attribute2_val = pti;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tv_POLY_attribute_baseColor = vec3(baseColor);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd4\n\tvec3 v_POLY_multAdd4_val = (vec3(1.0, 1.0, 1.0)*(v_POLY_globals1_position + vec3(0.0, -0.5, 0.0))) + vec3(0.0, 0.0, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/complement1\n\tfloat v_POLY_complement1_val = complement(v_POLY_attribute2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/normalize2\n\tvec3 v_POLY_normalize2_normalized = normalize(v_POLY_multAdd4_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/subtract2\n\tfloat v_POLY_subtract2_subtract = (v_POLY_param2_val - v_POLY_complement1_val - 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd3\n\tvec3 v_POLY_multAdd3_val = (vec3(0.5, 0.5, 0.5)*(v_POLY_normalize2_normalized + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.5, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/clamp2\n\tfloat v_POLY_clamp2_val = clamp(v_POLY_subtract2_subtract, 0.0, 1.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/easing1\n\tfloat v_POLY_easing1_out = sineInOut(v_POLY_clamp2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix2\n\tvec3 v_POLY_mix2_mix = mix(v_POLY_globals1_position, v_POLY_multAdd3_val, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix3\n\tvec3 v_POLY_mix3_mix = mix(v_POLY_globals1_normal, v_POLY_normalize2_normalized, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tvec3 transformed = v_POLY_mix2_mix;\n\tvec3 objectNormal = v_POLY_mix3_mix;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <worldpos_vertex>\n\t#include <clipping_planes_vertex>\n\tvWorldPosition = worldPosition.xyz;\n}",
+					"fragmentShader": "\n// INSERT DEFINES\n\n#define DISTANCE\n\nuniform vec3 referencePosition;\nuniform float nearDistance;\nuniform float farDistance;\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main () {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tvec3 v_POLY_attribute1_val = v_POLY_attribute_baseColor;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_attribute1_val;\n\n\n\n\n\t// INSERT BODY\n\n\t#include <alphatest_fragment>\n\n\tfloat dist = length( vWorldPosition - referencePosition );\n\tdist = ( dist - nearDistance ) / ( farDistance - nearDistance );\n\tdist = saturate( dist ); // clamp to [ 0, 1 ]\n\n\tgl_FragColor = packDepthToRGBA( dist );\n\n}\n",
+					"timeDependent": false,
+					"resolutionDependent": false,
+					"paramConfigs": [
+						{
+							"type": "float",
+							"name": "blendShape",
+							"defaultValue": 0,
+							"uniformName": "v_POLY_param_blendShape"
+						}
+					]
+				}
+			},
+			"customDepthDOFMaterial": {
+				"material": {
+					"metadata": {
+						"version": 4.5,
+						"type": "Material",
+						"generator": "Material.toJSON"
+					},
+					"uuid": "/cubes/MAT/meshLambertBuilder1-customDepthDOFMaterial",
+					"type": "MeshDepthMaterial",
+					"name": "customDepthDOFMaterial",
+					"depthFunc": 3,
+					"depthTest": true,
+					"depthWrite": true,
+					"colorWrite": true,
+					"stencilWrite": false,
+					"stencilWriteMask": 255,
+					"stencilFunc": 519,
+					"stencilRef": 0,
+					"stencilFuncMask": 255,
+					"stencilFail": 7680,
+					"stencilZFail": 7680,
+					"stencilZPass": 7680,
+					"depthPacking": 3200
+				},
+				"onBeforeCompileDataJSON": {
+					"vertexShader": "#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/complement1\nfloat complement(float x){return 1.0-x;}\nvec2 complement(vec2 x){return vec2(1.0-x.x, 1.0-x.y);}\nvec3 complement(vec3 x){return vec3(1.0-x.x, 1.0-x.y, 1.0-x.z);}\nvec4 complement(vec4 x){return vec4(1.0-x.x, 1.0-x.y, 1.0-x.z, 1.0-x.w);}\n\n\n// /cubes/MAT/meshLambertBuilder1/easing1\n\nfloat sineInOut(float t) {\n  return -0.5 * (cos(PI * t) - 1.0);\n}\n\n\n\n\n\n\n\n\n\n// /cubes/MAT/meshLambertBuilder1/param2\nuniform float v_POLY_param_blendShape;\n\n// /cubes/MAT/meshLambertBuilder1/globals1\nvarying vec3 v_POLY_globals1_position;\nvarying vec3 v_POLY_globals1_normal;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n// /cubes/MAT/meshLambertBuilder1/attribute2\nattribute float pti;\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nattribute vec3 baseColor;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\nvarying vec2 vHighPrecisionZW;\nvoid main() {\n\t#include <uv_vertex>\n\t#include <skinbase_vertex>\n\t#ifdef USE_DISPLACEMENTMAP\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\t#endif\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/globals1\n\tv_POLY_globals1_position = vec3(position);\n\tv_POLY_globals1_normal = vec3(normal);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/param2\n\tfloat v_POLY_param2_val = v_POLY_param_blendShape;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute2\n\tfloat v_POLY_attribute2_val = pti;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tv_POLY_attribute_baseColor = vec3(baseColor);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd4\n\tvec3 v_POLY_multAdd4_val = (vec3(1.0, 1.0, 1.0)*(v_POLY_globals1_position + vec3(0.0, -0.5, 0.0))) + vec3(0.0, 0.0, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/complement1\n\tfloat v_POLY_complement1_val = complement(v_POLY_attribute2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/normalize2\n\tvec3 v_POLY_normalize2_normalized = normalize(v_POLY_multAdd4_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/subtract2\n\tfloat v_POLY_subtract2_subtract = (v_POLY_param2_val - v_POLY_complement1_val - 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/multAdd3\n\tvec3 v_POLY_multAdd3_val = (vec3(0.5, 0.5, 0.5)*(v_POLY_normalize2_normalized + vec3(0.0, 0.0, 0.0))) + vec3(0.0, 0.5, 0.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/clamp2\n\tfloat v_POLY_clamp2_val = clamp(v_POLY_subtract2_subtract, 0.0, 1.0);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/easing1\n\tfloat v_POLY_easing1_out = sineInOut(v_POLY_clamp2_val);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix2\n\tvec3 v_POLY_mix2_mix = mix(v_POLY_globals1_position, v_POLY_multAdd3_val, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/mix3\n\tvec3 v_POLY_mix3_mix = mix(v_POLY_globals1_normal, v_POLY_normalize2_normalized, v_POLY_easing1_out);\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tvec3 transformed = v_POLY_mix2_mix;\n\tvec3 objectNormal = v_POLY_mix3_mix;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\tvHighPrecisionZW = gl_Position.zw;\n}",
+					"fragmentShader": "\n// INSERT DEFINES\n\n\n#if DEPTH_PACKING == 3200\n\n\tuniform float opacity;\n\n#endif\n\n#include <common>\n\n\n\n// /cubes/MAT/meshLambertBuilder1/attribute1\nvarying vec3 v_POLY_attribute_baseColor;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tdiffuseColor.a = opacity;\n\n\t#endif\n\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\n\n\n\t// /cubes/MAT/meshLambertBuilder1/attribute1\n\tvec3 v_POLY_attribute1_val = v_POLY_attribute_baseColor;\n\t\n\t// /cubes/MAT/meshLambertBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_attribute1_val;\n\n\n\n\n\t// INSERT BODY\n\t// the new body lines should be added before the alphatest_fragment\n\t// so that alpha is set before (which is really how it would be set if the alphamap_fragment above was used by the material node parameters)\n\n\t#include <alphatest_fragment>\n\n\t#include <logdepthbuf_fragment>\n\n\n\t// Higher precision equivalent of gl_FragCoord.z. This assumes depthRange has been left to its default values.\n\tfloat fragCoordZ = 0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5;\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tgl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), diffuseColor.a );\n\n\t#elif DEPTH_PACKING == 3201\n\n\t\tgl_FragColor = packDepthToRGBA( fragCoordZ );\n\n\t#endif\n\n}\n",
+					"timeDependent": false,
+					"resolutionDependent": false,
+					"paramConfigs": [
+						{
+							"type": "float",
+							"name": "blendShape",
+							"defaultValue": 0,
+							"uniformName": "v_POLY_param_blendShape"
+						}
+					]
+				}
+			}
+		}
+	}
+}

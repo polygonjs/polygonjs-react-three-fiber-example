@@ -1,0 +1,57 @@
+.logo-container {
+	position: absolute;
+	bottom: 0px;
+	font-size: 0.8rem;
+	color: white;
+	bottom: 5px;
+	width: 100%;
+	pointer-events: none;
+	text-align: center;
+}
+.logo-container .logo {
+	width: 20px;
+	height: 20px;
+	pointer-events: auto;
+	cursor: pointer;
+}
+.logo-container .logo img {
+	/* height: 32px; */
+}
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+.logo-container .logo .link-label {
+	text-decoration: none;
+	color: #222;
+	border-bottom: 2px solid transparent;
+	bottom: 9px;
+	position: relative;
+	margin-left: 10px;
+}
+.logo-container .logo:hover .link-label {
+	border-bottom: 2px solid #222;
+}
+
+.swipe-indicator {
+	position: absolute;
+	top: 5px;
+}
+.swipe-indicator.left {
+	left: 20px;
+}
+
+.swipe-indicator.right {
+	right: 20px;
+}

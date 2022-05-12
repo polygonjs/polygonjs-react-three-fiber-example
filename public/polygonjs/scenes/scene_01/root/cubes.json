@@ -1,0 +1,256 @@
+{
+	"type": "geo",
+	"nodes": {
+		"attribCreate1": {
+			"type": "attribCreate",
+			"params": {
+				"name": "pti",
+				"value1": "@ptnum / (pointsCount(0)-1)"
+			},
+			"inputs": [
+				"palette1"
+			]
+		},
+		"attribDelete1": {
+			"type": "attribDelete",
+			"params": {
+				"name": "normal"
+			},
+			"inputs": [
+				"delete1"
+			]
+		},
+		"attribPromote1": {
+			"type": "attribPromote",
+			"params": {
+				"classFrom": 1,
+				"classTo": 0,
+				"name": "color pti restP"
+			},
+			"inputs": [
+				"copy1"
+			]
+		},
+		"attribRename1": {
+			"type": "attribRename",
+			"params": {
+				"oldName": "color",
+				"newName": "baseColor"
+			},
+			"inputs": [
+				"merge1"
+			]
+		},
+		"box1": {
+			"type": "box",
+			"params": {
+				"divisions": 6,
+				"center": [
+					0,
+					0.5,
+					0
+				]
+			}
+		},
+		"copy1": {
+			"type": "copy",
+			"params": {
+				"copyAttributes": true,
+				"attributesToCopy": "h color pti"
+			},
+			"inputs": [
+				"transform1",
+				"attribCopy1"
+			]
+		},
+		"delete1": {
+			"type": "delete",
+			"params": {
+				"byExpression": "true",
+				"expression": "@P.x>(0.5*ch(\"../plane1/sizex\")) || @P.z>(0.5*ch(\"../plane1/sizex\"))"
+			},
+			"inputs": [
+				"fuse1"
+			]
+		},
+		"fuse1": {
+			"type": "fuse",
+			"inputs": [
+				"point1"
+			]
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "../MAT/meshLambertBuilder1"
+			},
+			"inputs": [
+				"attribRename1"
+			]
+		},
+		"merge1": {
+			"type": "merge",
+			"params": {
+				"compact": true
+			},
+			"inputs": [
+				"attribPromote1"
+			],
+			"flags": {
+				"bypass": true
+			}
+		},
+		"palette1": {
+			"type": "palette",
+			"params": {
+				"paletteName": "bloomberg",
+				"colorsCount": 5,
+				"color1": [
+					1,
+					0.3333333333333333,
+					0
+				],
+				"color2": [
+					0.9568627450980393,
+					0.7568627450980392,
+					0.27058823529411763
+				],
+				"color3": [
+					0.0784313725490196,
+					0.2784313725490196,
+					0.0784313725490196
+				],
+				"color4": [
+					0.1843137254901961,
+					0.01568627450980392,
+					0.9882352941176471
+				],
+				"color5": [
+					0.8862745098039215,
+					0.4627450980392157,
+					0.6862745098039216
+				]
+			},
+			"inputs": [
+				"sort1"
+			]
+		},
+		"plane1": {
+			"type": "plane",
+			"params": {
+				"size": [
+					8,
+					8
+				]
+			}
+		},
+		"point1": {
+			"type": "point",
+			"params": {
+				"updateX": true,
+				"x": "0.5+round(@P.x)",
+				"updateZ": true,
+				"z": "0.5+round(@P.z)"
+			},
+			"inputs": [
+				"scatter1"
+			]
+		},
+		"restAttributes1": {
+			"type": "restAttributes",
+			"params": {
+				"tnormal": false
+			},
+			"inputs": [
+				"attribCreate1"
+			],
+			"flags": {
+				"bypass": true
+			}
+		},
+		"scatter1": {
+			"type": "scatter",
+			"params": {
+				"pointsCount": 27
+			},
+			"inputs": [
+				"plane1"
+			]
+		},
+		"transform1": {
+			"type": "transform",
+			"inputs": [
+				"box1"
+			]
+		},
+		"sort1": {
+			"type": "sort",
+			"inputs": [
+				"attribDelete1"
+			]
+		},
+		"audioNotes1": {
+			"type": "audioNotes",
+			"params": {
+				"startOctave": 4,
+				"endOctave": 6
+			},
+			"inputs": [
+				"material1"
+			]
+		},
+		"noise1": {
+			"type": "noise",
+			"params": {
+				"amplitude": 2.9,
+				"freq": [
+					1.2,
+					1.2,
+					1.2
+				],
+				"offset": [
+					2.9,
+					2.9,
+					3.8
+				],
+				"octaves": 4
+			},
+			"inputs": [
+				"restAttributes1"
+			]
+		},
+		"attribCreate2": {
+			"type": "attribCreate",
+			"params": {
+				"name": "h",
+				"value1": "abs(round(@P.y))"
+			},
+			"inputs": [
+				"noise1"
+			]
+		},
+		"attribCopy1": {
+			"type": "attribCopy",
+			"params": {
+				"name": "h"
+			},
+			"inputs": [
+				"restAttributes1",
+				"attribCreate2"
+			]
+		},
+		"audioNotes2": {
+			"type": "audioNotes",
+			"params": {
+				"name": "note2",
+				"endOctave": 3
+			},
+			"inputs": [
+				"audioNotes1"
+			]
+		}
+	},
+	"flags": {
+		"display": true
+	}
+}

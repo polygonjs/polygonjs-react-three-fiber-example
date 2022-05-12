@@ -1,0 +1,21 @@
+{
+	"type": "orthographicCamera",
+	"nodes": {},
+	"params": {
+		"t": [
+			5,
+			3.4,
+			5
+		],
+		"controls": "eventsNetwork1/cameraOrbitControls1",
+		"near": 9.091,
+		"far": 27,
+		"size": 5
+	},
+	"flags": {
+		"display": true
+	},
+	"selection": [
+		"eventsNetwork1"
+	]
+}

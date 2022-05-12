@@ -1,0 +1,631 @@
+{
+	"type": "actor",
+	"nodes": {
+		"onTick1": {
+			"type": "onTick"
+		},
+		"onObjectHover1": {
+			"type": "onObjectHover"
+		},
+		"twoWaySwitch1": {
+			"type": "twoWaySwitch",
+			"params": {
+				"condition": {
+					"type": "boolean",
+					"default_value": false,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"ifTrue": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": 1.2
+				},
+				"ifFalse": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "onObjectHover1",
+					"output": "hovered"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "condition",
+						"type": "boolean",
+						"isArray": false
+					},
+					{
+						"name": "ifTrue",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "ifFalse",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"setObjectScale1": {
+			"type": "setObjectScale",
+			"params": {
+				"scale": {
+					"overriden_options": {}
+				},
+				"mult": {
+					"overriden_options": {}
+				},
+				"lerp": {
+					"raw_input": 0.11,
+					"overriden_options": {}
+				},
+				"updateMatrix": {
+					"overriden_options": {}
+				}
+			},
+			"maxInputsCount": 6,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "onTick1",
+					"output": "trigger"
+				},
+				null,
+				{
+					"index": 2,
+					"node": "floatToVec3_1",
+					"output": "vec3"
+				}
+			]
+		},
+		"floatToVec3_1": {
+			"type": "floatToVec3",
+			"params": {
+				"x": {
+					"raw_input": 1,
+					"overriden_options": {}
+				},
+				"y": {
+					"overriden_options": {}
+				},
+				"z": {
+					"raw_input": 1,
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				null,
+				{
+					"index": 1,
+					"node": "twoWaySwitch1",
+					"output": "val"
+				}
+			]
+		},
+		"playInstrumentNote1": {
+			"type": "playInstrumentNote",
+			"params": {
+				"node": "../../../positionalAudio1/OUT",
+				"note": {
+					"overriden_options": {}
+				},
+				"duration": {
+					"overriden_options": {}
+				}
+			},
+			"maxInputsCount": 4,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "triggerTwoWaySwitch1",
+					"output": "triggerIfTrue"
+				},
+				null,
+				{
+					"index": 2,
+					"node": "switch1",
+					"output": "val"
+				}
+			]
+		},
+		"triggerTwoWaySwitch1": {
+			"type": "triggerTwoWaySwitch",
+			"params": {
+				"condition": {
+					"overriden_options": {}
+				}
+			},
+			"maxInputsCount": 2,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "onObjectHover1",
+					"output": "trigger"
+				},
+				{
+					"index": 1,
+					"node": "onObjectHover1",
+					"output": "hovered"
+				}
+			]
+		},
+		"getObjectAttribute1": {
+			"type": "getObjectAttribute",
+			"params": {
+				"attribName": "note",
+				"type": 4
+			},
+			"connection_points": {
+				"in": [
+					{
+						"name": "Object3D",
+						"type": "Object3D",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "string",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"constant_posBlend": {
+			"type": "constant",
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"mix1": {
+			"type": "mix",
+			"params": {
+				"value0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				},
+				"value1": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"blend": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				null,
+				{
+					"index": 1,
+					"node": "getObjectAttribute2",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "clamp1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "value1",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "blend",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"getObjectAttribute2": {
+			"type": "getObjectAttribute",
+			"params": {
+				"attribName": "h"
+			},
+			"connection_points": {
+				"in": [
+					{
+						"name": "Object3D",
+						"type": "Object3D",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"setObjectPosition1": {
+			"type": "setObjectPosition",
+			"params": {
+				"position": {
+					"overriden_options": {}
+				},
+				"lerp": {
+					"overriden_options": {}
+				},
+				"updateMatrix": {
+					"overriden_options": {}
+				}
+			},
+			"maxInputsCount": 5,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "setObjectScale1",
+					"output": "trigger"
+				},
+				null,
+				{
+					"index": 2,
+					"node": "floatToVec3_2",
+					"output": "vec3"
+				}
+			]
+		},
+		"floatToVec3_2": {
+			"type": "floatToVec3",
+			"params": {
+				"x": {
+					"overriden_options": {}
+				},
+				"y": {
+					"overriden_options": {}
+				},
+				"z": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3ToFloat1",
+					"output": "x"
+				},
+				{
+					"index": 1,
+					"node": "mix1",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "vec3ToFloat1",
+					"output": "z"
+				}
+			]
+		},
+		"getObjectProperty1": {
+			"type": "getObjectProperty"
+		},
+		"vec3ToFloat1": {
+			"type": "vec3ToFloat",
+			"params": {
+				"vec3": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "getObjectProperty1",
+					"output": "position"
+				}
+			]
+		},
+		"getObjectAttribute3": {
+			"type": "getObjectAttribute",
+			"params": {
+				"attribName": "pti"
+			},
+			"connection_points": {
+				"in": [
+					{
+						"name": "Object3D",
+						"type": "Object3D",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"subtract1": {
+			"type": "subtract",
+			"params": {
+				"sub0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"sub1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "constant_posBlend",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "getObjectAttribute3",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "sub0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "sub1",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "subtract",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"clamp1": {
+			"type": "clamp",
+			"params": {
+				"value0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"min": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				},
+				"max": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "subtract1",
+					"output": "subtract"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "min",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "max",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"getObjectAttribute4": {
+			"type": "getObjectAttribute",
+			"params": {
+				"attribName": "note2",
+				"type": 4
+			},
+			"connection_points": {
+				"in": [
+					{
+						"name": "Object3D",
+						"type": "Object3D",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "string",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"switch1": {
+			"type": "switch",
+			"params": {
+				"index": {
+					"type": "integer",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": "ch(\"../constant_posBlend/float\") >= 1"
+				},
+				"in0": {
+					"type": "string",
+					"default_value": "0",
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"in1": {
+					"type": "string",
+					"default_value": "0",
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"in2": {
+					"type": "string",
+					"default_value": "",
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"inputs": [
+				null,
+				{
+					"index": 1,
+					"node": "getObjectAttribute1",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "getObjectAttribute4",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "index",
+						"type": "integer",
+						"isArray": false
+					},
+					{
+						"name": "in0",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "in1",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "in2",
+						"type": "string",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "string",
+						"isArray": false
+					}
+				]
+			}
+		}
+	},
+	"inputs": [
+		"audioNotes2"
+	],
+	"flags": {
+		"display": true
+	}
+}

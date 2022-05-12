@@ -1,0 +1,17 @@
+{
+	"type": "copNetwork",
+	"nodes": {
+		"imageEXR1": {
+			"type": "imageEXR"
+		},
+		"envMap1": {
+			"type": "envMap",
+			"inputs": [
+				"imageEXR1"
+			]
+		}
+	},
+	"selection": [
+		"imageEXR1"
+	]
+}

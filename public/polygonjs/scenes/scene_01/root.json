@@ -1,0 +1,28 @@
+{
+	"type": "root",
+	"nodes": {
+		"hemisphereLight1": {
+			"type": "hemisphereLight",
+			"flags": {
+				"display": true
+			}
+		},
+		"audioListener1": {
+			"type": "audioListener",
+			"flags": {
+				"display": true
+			}
+		}
+	},
+	"params": {
+		"bgColor": [
+			0.23137254901960785,
+			0.7490196078431373,
+			0.5764705882352941
+		],
+		"mainCameraPath": "/perspectiveCamera1"
+	},
+	"selection": [
+		"cubes"
+	]
+}

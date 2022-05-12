@@ -1,0 +1,27 @@
+{
+	"type": "geo",
+	"nodes": {
+		"planeHelper1": {
+			"type": "planeHelper",
+			"params": {
+				"size": "ch(\"../../cubes/plane1/sizex\")",
+				"colorCenterLine": [
+					0,
+					0,
+					0
+				],
+				"colorGrid": [
+					0,
+					0,
+					0
+				]
+			},
+			"flags": {
+				"display": true
+			}
+		}
+	},
+	"flags": {
+		"display": true
+	}
+}
