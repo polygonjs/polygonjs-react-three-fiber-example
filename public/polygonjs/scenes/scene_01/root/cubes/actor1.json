@@ -456,7 +456,7 @@
 		"clamp1": {
 			"type": "clamp",
 			"params": {
-				"value0": {
+				"value": {
 					"type": "float",
 					"default_value": 0,
 					"options": {
@@ -491,7 +491,7 @@
 			"connection_points": {
 				"in": [
 					{
-						"name": "value0",
+						"name": "value",
 						"type": "float",
 						"isArray": false
 					},
@@ -622,9 +622,7 @@
 			}
 		}
 	},
-	"inputs": [
-		"audioNotes2"
-	],
+	"inputs": ["audioNotes2"],
 	"flags": {
 		"display": true
 	}

@@ -6,9 +6,7 @@
 		},
 		"AMSynth1": {
 			"type": "AMSynth",
-			"inputs": [
-				"envelope1"
-			]
+			"inputs": ["envelope1"]
 		},
 		"playInstrument1": {
 			"type": "playInstrument",
@@ -16,55 +14,40 @@
 				"startOctave": 1,
 				"endOctave": 3
 			},
-			"inputs": [
-				"switch_filterSound"
-			]
+			"inputs": ["switch_filterSound"]
 		},
 		"OUT": {
 			"type": "null",
-			"inputs": [
-				"playInstrument1"
-			]
+			"inputs": ["playInstrument1"]
 		},
 		"sampler1": {
 			"type": "sampler",
 			"params": {
 				"baseUrl": "https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples"
 			},
-			"inputs": [
-				"envelope2"
-			]
+			"inputs": ["envelope2"]
 		},
 		"envelope2": {
 			"type": "envelope"
 		},
 		"reverb1": {
 			"type": "reverb",
-			"inputs": [
-				"sampler1"
-			]
+			"inputs": ["sampler1"]
 		},
 		"distortion1": {
 			"type": "distortion",
-			"inputs": [
-				"sampler1"
-			]
+			"inputs": ["sampler1"]
 		},
 		"phaser1": {
 			"type": "phaser",
-			"inputs": [
-				"reverb1"
-			],
+			"inputs": ["reverb1"],
 			"flags": {
 				"bypass": true
 			}
 		},
 		"switch_filterSound": {
 			"type": "switch",
-			"inputs": [
-				"sampler1",
-				"phaser1"
-			]
+			"inputs": ["sampler1", "phaser1"]
 		}
 	},
 	"params": {

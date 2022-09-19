@@ -6,12 +6,7 @@
 		},
 		"envMap1": {
 			"type": "envMap",
-			"inputs": [
-				"imageEXR1"
-			]
+			"inputs": ["imageEXR1"]
 		}
-	},
-	"selection": [
-		"imageEXR1"
-	]
+	}
 }

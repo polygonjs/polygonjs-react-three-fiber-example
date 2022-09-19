@@ -4,10 +4,7 @@
 		"hexagons1": {
 			"type": "hexagons",
 			"params": {
-				"size": [
-					10,
-					10
-				],
+				"size": [10, 10],
 				"hexagonRadius": 0.5,
 				"pointsOnly": 1
 			}
@@ -21,23 +18,14 @@
 		},
 		"copy1": {
 			"type": "copy",
-			"inputs": [
-				"transform1",
-				"delete2"
-			]
+			"inputs": ["transform1", "delete2"]
 		},
 		"transform1": {
 			"type": "transform",
 			"params": {
-				"r": [
-					0,
-					30,
-					0
-				]
+				"r": [0, 30, 0]
 			},
-			"inputs": [
-				"circle1"
-			]
+			"inputs": ["circle1"]
 		},
 		"circle2": {
 			"type": "circle",
@@ -50,15 +38,9 @@
 		"transform2": {
 			"type": "transform",
 			"params": {
-				"t": [
-					0,
-					0.7,
-					0.9
-				]
+				"t": [0, 0.7, 0.9]
 			},
-			"inputs": [
-				"hexagons1"
-			]
+			"inputs": ["hexagons1"]
 		},
 		"ray1": {
 			"type": "ray",
@@ -67,10 +49,7 @@
 				"transferFaceNormals": 0,
 				"addDistAttribute": 1
 			},
-			"inputs": [
-				"transform2",
-				"circle2"
-			]
+			"inputs": ["transform2", "circle2"]
 		},
 		"delete2": {
 			"type": "delete",
@@ -78,27 +57,21 @@
 				"byExpression": 1,
 				"expression": "@dist<0"
 			},
-			"inputs": [
-				"ray1"
-			]
+			"inputs": ["ray1"]
 		},
 		"material1": {
 			"type": "material",
 			"params": {
 				"material": "../MAT/lineBasic1"
 			},
-			"inputs": [
-				"merge1"
-			]
+			"inputs": ["merge1"]
 		},
 		"merge1": {
 			"type": "merge",
 			"params": {
 				"compact": 1
 			},
-			"inputs": [
-				"copy1"
-			]
+			"inputs": ["copy1"]
 		},
 		"tube1": {
 			"type": "tube",
@@ -107,19 +80,12 @@
 				"radiusBottom": "ch(\"radiusTop\")",
 				"height": 0.14,
 				"segmentsRadial": 6,
-				"direction": [
-					0,
-					1,
-					0
-				]
+				"direction": [0, 1, 0]
 			}
 		},
 		"copy2": {
 			"type": "copy",
-			"inputs": [
-				"tube1",
-				"delete2"
-			],
+			"inputs": ["tube1", "delete2"],
 			"flags": {
 				"display": true
 			}

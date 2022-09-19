@@ -12,25 +12,16 @@
 			"params": {
 				"material": "../MAT/meshStandard1"
 			},
-			"inputs": [
-				"sphere1"
-			],
+			"inputs": ["sphere1"],
 			"flags": {
 				"display": true
 			}
 		}
 	},
 	"params": {
-		"t": [
-			-4.060681057227372,
-			0.8183383518574159,
-			-0.9919559957586728
-		]
+		"t": [-4.060681057227372, 0.8183383518574159, -0.9919559957586728]
 	},
 	"flags": {
 		"display": false
-	},
-	"selection": [
-		"MAT"
-	]
+	}
 }
