@@ -4,7 +4,7 @@
 	"private": true,
 	"dependencies": {
 		"@polygonjs/polygonjs": "^1.2.21",
-		"@polygonjs/react-three-fiber": "^1.2.21",
+		"@polygonjs/react-three-fiber": "^1.2.21-2",
 		"@react-three/drei": "^9.31.1",
 		"@react-three/fiber": "^8.7.4",
 		"@testing-library/jest-dom": "^5.16.4",
