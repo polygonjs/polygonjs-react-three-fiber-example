@@ -6900,10 +6900,10 @@ pkg-up@^3.1.0:
   dependencies:
     find-up "^3.0.0"
 
-polygonjs-editor@^1.2.21-1:
-  version "1.2.21-1"
-  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.2.21-1.tgz#5154b636b11e910fc86329cec4de70ace1173e50"
-  integrity sha512-DnZvMVibUQp/VTvcS0Qdl/zwrugb8FUyB+NTO4d5StHs4x41q46VOZHRG+riyzMxgoaehlMPr1TnEgzJUWk/YA==
+polygonjs-editor@^1.2.21-2:
+  version "1.2.21-2"
+  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.2.21-2.tgz#d81cd802f9790d91173dc5613aee651b21d9b6be"
+  integrity sha512-HkD/vIOndcSYkbh4ue32ott/TxLL3Z7sHe860o9t0szQAaTCaF8AHudpdLPH2dIHU+FyHPYdzhAtT2Qnztxhdw==
   dependencies:
     "@polygonjs/polygonjs" "1.2.21"
     btoa "1.2.1"
