@@ -1,5 +1,4 @@
 [
-	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master//textures/piz_compressed.exr",
 	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/A0.mp3",
 	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/A1.mp3",
 	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/A2.mp3",
@@ -29,5 +28,6 @@
 	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/Fs4.mp3",
 	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/Fs5.mp3",
 	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/Fs6.mp3",
-	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/Fs7.mp3"
+	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/audio/resources/tonejs.github.io/samples/Fs7.mp3",
+	"https://raw.githubusercontent.com/polygonjs/polygonjs-assets/master/textures/piz_compressed.exr"
 ]
