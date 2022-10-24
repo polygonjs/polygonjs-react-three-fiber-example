@@ -27,10 +27,10 @@
 			"panel_data": {
 				"camera": {
 					"position": {
-						"x": -95.59589141031987,
-						"y": -667.7459757413446
+						"x": -142.3626350592806,
+						"y": -631.371841792153
 					},
-					"zoom": 0.7503333333333336
+					"zoom": 0.5773333333333335
 				},
 				"history": {
 					"2": {
@@ -193,6 +193,13 @@
 							"y": -103.30828975975768
 						},
 						"zoom": 0.5615679012345679
+					},
+					"1287": {
+						"position": {
+							"x": -142.3626350592806,
+							"y": -631.371841792153
+						},
+						"zoom": 0.5773333333333335
 					},
 					"1329": {
 						"position": {
@@ -405,9 +412,10 @@
 	"saveOptions": {
 		"createExport": false,
 		"skipExportSinceRemoteAssetsPresents": false,
+		"minimizeFilesCount": false,
 		"compressJs": false,
 		"createZip": false,
-		"publishToIntegrations": false
+		"runPostExportCommand": false
 	},
 	"paramsModal": []
 }
