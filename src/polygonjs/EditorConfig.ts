@@ -1,4 +1,12 @@
-import {EditorApiOptions, ConfigureEditor} from 'polygonjs-editor/public/editor/api';
+//
+// learn more about this file on https://polygonjs.com/docs/editor/config
+//
+
+import {
+	EditorApiOptions,
+	ConfigureEditor,
+	// @ts-ignore
+} from 'polygonjs-editor/public/editor/api';
 // import {ProgressBarTop} from '@polygonjs/polygonjs/src/engine/viewers/progressBars/Top';
 
 export const configureEditor: ConfigureEditor = (options: EditorApiOptions) => {
